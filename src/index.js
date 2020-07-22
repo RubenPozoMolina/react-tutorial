@@ -1,6 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import "./index.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
 class Square extends React.Component {
   constructor(props) {
@@ -12,8 +12,10 @@ class Square extends React.Component {
 
   render() {
     return (
-      <button className="square" 
-      onClick={() => this.props.onClick()}>
+      <button
+        className="square"
+        onClick={() => this.props.onClick()}
+      >
         {this.props.value}
       </button>
     );
@@ -27,11 +29,13 @@ class Board extends React.Component {
       squares: Array(9).fill(null),
     };
   }
+
   handleClick(i) {
     const squares = this.state.squares.slice();
     squares[i] = 'X';
-    this.setState({squares: squares});
+    this.setState({ squares });
   }
+
   renderSquare(i) {
     return (
       <Square
@@ -42,7 +46,7 @@ class Board extends React.Component {
   }
 
   render() {
-    const status = "Next player: X";
+    const status = 'Next player: X';
 
     return (
       <div>
@@ -85,4 +89,4 @@ class Game extends React.Component {
 
 // ========================================
 
-ReactDOM.render(<Game />, document.getElementById("root"));
+ReactDOM.render(<Game />, document.getElementById('root'));
